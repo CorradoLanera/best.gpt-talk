@@ -1,0 +1,221 @@
+---
+title: |
+  [Automation]{style="color:darkorange"} and [LLM]{style="color:darkorange"}s at [BEST]{style="color:darkblue"}
+subtitle: "Support for Systematic Review (screening stage)"
+title-slide-attributes:
+  data-background-image: img/logo_best.png
+  data-background-size: contain
+  data-background-opacity: "0.3"
+  data-footer: |
+    2024-12-02 -- Presentation to the _GdL Intelligenza Artificiale_ - INAIL
+author: "[**Corrado Lanera**]{.underline}, Giorgia Stoppa<br>Luca D'Amato, Enrico Oddone, Annibale Biggeri, Dolores Cattelan"
+data: "2024-12-02"
+format: 
+  revealjs:
+    width:  1648 #(3/2)
+    height: 1080
+    history: false
+    preview-links: auto
+    code-link: true
+    slide-number: true
+    controls: true
+    chalkboard:
+      src: chalkboard.json
+    logo: img/UBEP.png
+    footer: "__GPT@BEST4SR__ - [C. Lanera]{.underline}, G. Stoppa, L. D'Amato, E. Oddone, A. Biggeri, D. Cattelan"
+include-after-body: add-custom-footer.html
+---
+
+## Corrado Lanera
+
+::::: columns
+::: {.column width="30%"}
+![](img/profilo_CL.jpg){fig-align="center"}
+:::
+
+::: {.column width="70%"}
+-   Assistant professor at the Univ. of Padova - Italy.
+
+-   Responsible for the Laboratory of Artificial Intelligence for Medical Sciences.
+
+-   Rstudio [Certified Instructor](https://education.rstudio.com/trainers/people/lanera+corrado/) in the Tidyverse.
+
+-   Daily working with R since 2014.
+
+-   Best citation: "The only way to go fast is to go well" - Robert *Uncle Bob* Martin.
+
+-   Contacts:
+
+    -   Mail: [corrado.lanera\@ubep.unipd.it](mailto:corrado.lanera@ubep.unipd.it)
+
+    -   GitHub, Telegram, Linkedin, X/Twitter: \@CorradoLanera.
+:::
+:::::
+
+## Intro
+
+::: panel-tabset
+### BEST project
+
+```{=html}
+<iframe width="1648" height="850" src="https://ubesp-dctv.github.io/best.website/" title="BEST website"></iframe>
+```
+
+### OCCAM's Matrix
+
+![](img/occam-desc.png){width="50%" fig-align="center"}
+
+### Goals for today
+
+-   Needs we have in automation for Systematic Reviews
+
+-   Tools for supporting automation in Systematic Reviews (in R)
+
+-   Pipeline for the screening stage in the BEST project
+
+-   Demo
+
+-   Answer your questions
+:::
+
+## Needs about Automation for SR
+
+::: panel-tabset
+### Operational
+
+-   **Data Collection**: Automate the search for articles in databases.
+
+-   **Screening**: Automate the screening of articles.
+
+-   **Report**: Automate the report of the results (for validation purpose too).
+
+### Infrastructural
+
+-   **Reproducibility**: Ensure the reproducibility of the process.
+
+-   **Optimization** (time and costs): Optimize the process, i.e. minimum amount of operations to be execute at each iteration of validation and update.
+
+-   **Robustness**: Ensure the robustness of the process.
+:::
+
+## Tools
+
+::::: columns
+::: {.column width="50%"}
+### Operational
+
+-   Data Collection: PubMed + `{pubmedR}`
+
+-   Screening: OpenAI's GPT + `{gpteasyr}`
+
+-   Report: Posits's Quarto
+:::
+
+::: {.column width="50%"}
+### Infrastructural
+
+-   Reproducibility: `{targets}`
+
+-   Optimization: `{targets}`
+
+-   Robustness: `{targets}`
+:::
+:::::
+
+## Pipeline
+
+::: panel-tabset
+### Overview
+
+![](img/full-pipeline.png){fig-align="center"}
+
+### Data Collection
+
+::: {.r-stack}
+![](img/data-collection.png){fig-align="center"}
+
+![](img/data-targets.png){.fragment fig-align="center"}
+:::
+
+
+### GPT
+
+::: {.r-stack}
+![](img/gpt-pipeline.png){fig-align="center"}
+
+![](img/gpt-targets.png){.fragment fig-align="center"}
+:::
+
+### Report and Validation
+
+::: {.r-stack}
+![](img/validation-pipeline.png){fig-align="center"}
+
+![](img/validation-targets.png){.fragment fig-align="center"}
+:::
+
+
+:::
+
+## Demo
+
+- Up to date
+
+- Outdated
+
+## Conclusion[^1]
+
+[^1]: Acknowledgment: The slides are made using [Posit](https://posit.co/)'s [Quarto](https://quarto.org/) open-source scientific and technical publishing system powered in R by [Yihui Xie](https://yihui.org/)'s [Kintr](https://yihui.org/knitr/).
+
+:::::: panel-tabset
+### WIP
+
+::::: columns
+::: {.column width="33%"}
+### Current
+
+- 5 sites (i.e., search strings)
+- 100 articles each site
+
+:::
+
+::: {.column width="33%"}
+### Next
+
+- all sites
+- all articles
+
+:::
+
+::: {.column width="33%"}
+### Next-Next
+
+- full-text (pdf) data extraction
+:::
+
+:::::
+
+
+### Questions?
+
+Thank [**you**]{style="color:darkorange"} for the attention!
+
+![](img/full-pipeline.png){fig-align="center"}
+
+### Links
+
+- BEST: <https://ubesp-dctv.github.io/best.website/>
+
+- OCCAM: <http://www.occam.it>
+
+- `{pubmedR}`: <https://github.com/massimoaria/pubmedR>
+
+- OpenAI's API: <https://platform.openai.com/docs/overview>
+- `{gpteasyr}`: <https://corradolanera.github.io/gpteasyr>
+
+- `{targets}`: <https://books.ropensci.org/targets/>
+
+- Quarto: <https://quarto.org/>
+
+- GitHub repo (currently private): <https://github.com/UBESP-DCTV/best.gpt>
+::::::
