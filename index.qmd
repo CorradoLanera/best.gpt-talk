@@ -7,8 +7,8 @@ title-slide-attributes:
   data-background-size: contain
   data-background-opacity: "0.3"
   data-footer: |
-    2024-12-02 -- Presentation to the _GdL Intelligenza Artificiale_ - INAIL
-author: "[**Corrado Lanera**]{.underline}, Giorgia Stoppa<br>Luca D'Amato, Enrico Oddone, Annibale Biggeri, Dolores Cattelan"
+    2024-12-02 -- Presentation to the _GdL Inail Dimeila Intelligenza Artificiale_
+author: "[**Corrado Lanera**]{.underline}, Giorgia Stoppa<br>Luca D'Amato, Enrico Oddone, Annibale Biggeri, Dolores Catelan"
 data: "2024-12-02"
 format: 
   revealjs:
@@ -63,7 +63,38 @@ include-after-body: add-custom-footer.html
 
 ### OCCAM's Matrix
 
-![](img/occam-desc.png){width="50%" fig-align="center"}
+::::: columns
+::: {.column width="60%"}
+
+![](img/occam-desc.png){width="60%" fig-align="center"}
+
+Stringa validata ([Mattioli et al., 2010]) per correlazione tra specifiche patologie e le esposizioni lavorative:
+
+
+```
+(
+  occupational diseases [MH] OR occupational exposure [MH] OR 
+  occupational medicine [MH] OR occupational risk [TW] OR 
+  occupational hazard [TW] OR (industry [MeSH Terms] mortality [SH]) OR
+  occupational group* [TW] OR work-related OR
+  occupational air pollutants [MH] OR working environment [TW]
+) AND
+name(s)-of-the-disease.
+```
+
+:::
+
+::: {.column width="40%"}
+
+### Obiettivi
+
+- Revisione della struttura dello strumento-matrice: relazione tra rischio di tumore e esposizioni professionali (settore produttivo)
+- Fattibilità dell'uso di tecniche automatiche per il recupero di informazioni dalle banche dati bibliografiche.
+
+> [L'algoritmo di recupero e ingegnerizzazione del prompt è in fase di raffinamento e validazione, con i primi controlli in corso per migliorarne l'accuratezza tramite analisi statistiche.]{style="font-size: 50%;"}
+
+:::
+:::::
 
 ### Goals for today
 
